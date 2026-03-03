@@ -31,13 +31,21 @@ annoNascita → numero
 sesso → Può essere solo "m" o "f".
 anniDiServizio (array di numeri, es. [2014, 2015, 2017, 2018]) */
 
+/*🎯 BONUS
+Il type alias Dipendente, ha anche i seguenti dati:
+
+emailAziendale → Email assegnata al dipendente (non si può modificare)
+contratto → Specifica il tipo di contratto del dipendente, con valori limitati a “indeterminato”, “determinato” o “freelance”.*/
+
 //alias
 type Dipendente = {
     nome: string,
     cognome: string,
     annoNascita: number,
     sesso: 'm' | 'f',
-    anniDiServizio: number[]
+    anniDiServizio: number[],
+    readonly emailAziendale: 'marcolepre89@gmail.com',
+    contratto: 'indeterminato' | 'determinato' | 'freelance'
 }
 
 const utenteDipendente: Dipendente = {
@@ -45,6 +53,8 @@ const utenteDipendente: Dipendente = {
     cognome: 'Lepre',
     annoNascita: 1989,
     sesso: 'm',
-    anniDiServizio: [2005, 2006, 2010, 2014, 2023]
+    anniDiServizio: [2005, 2006, 2010, 2014, 2023],
+    emailAziendale: 'marcolepre89@gmail.com',
+    contratto: 'freelance'
 }
 console.log(utenteDipendente)
